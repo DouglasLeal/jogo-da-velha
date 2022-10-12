@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Mr+Bedfort&family=Peralta&family=Sedgwick+Ave+Display&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    <h1>Hello World</h1>
+    <button onclick="toggleMenu()" class="btn btn-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="menu">
+        <p><span data-language="menu-style-text">Estilo</span> X/O</p>
+        <div class="input-group">
+            <input checked type="radio" id="optionFont1" value="font-1" name="style-option"><label class="font-1" for="optionFont1">X/O</label>
+        </div>
+        <div class="input-group">
+            <input type="radio" id="optionFont2" value="font-2" name="style-option"><label class="font-2" for="optionFont2">X/O</label>
+        </div>
+        <div class="input-group">
+            <input type="radio" id="optionFont3" value="font-3" name="style-option"><label class="font-3" for="optionFont3">X/O</label>
+        </div>
+
+        <p data-language="menu-language-text"><span>Idioma</span> X/O</p>
+        <div class="input-group">
+            <input type="radio" id="optionLanguageEn" value="en" name="language-option">
+            <label for="optionLanguageEn" data-language="menu-option-english">Inglês</label>
+        </div>
+        <div class="input-group">
+            <input checked type="radio" id="optionLanguagePTBR" value="pt-BR" name="language-option">
+            <label for="optionLanguagePTBR" data-language="menu-option-portuguese">Português</label>
+        </div>
+    </div>
+
+    <div class="container-players">
+        <p class="player player-active" id="player1"><span data-language="player">Jogador</span> X</p>
+        <p class="player" id="player2"><span data-language="player">Jogador</span> O</p>
+    </div>
+
+    <table class="font-1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <button onclick="restart()" class="btn btn-restart" data-language="btn-restart">Reiniciar</button>
+
+    <script src="./assets/js/gameplay.js"></script>
+    <script src="./assets/js/i18n.js"></script>
+    <script src="./assets/js/menu.js"></script>
 </body>
+
 </html>
